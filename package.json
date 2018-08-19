@@ -1,0 +1,27 @@
+{
+  "name": "bitacora",
+  "version": "1.0.0",
+  "description": "API Js Practice",
+  "main": "index.js",
+  "repository": "https://github.com/YocelinGR/BitacoraAPIs.git",
+  "author": "YocelinGR",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.5.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "scripts": {
+      "pretest": "eslint src test",
+      "test": "jest --coverage",
+      "build": "webpack --mode=production",
+      "start": "webpack-dev-server --content-base dist/ --mode=development"
+    }
+  }
+}
