@@ -8,9 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!--Íconos de Material-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css"/>
   </head>
   <body>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '293953357855459',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.0'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     <div class="row">
       <div class="col m8 offset-m2 center-align">
         <h3>Reminder.me</h3>
@@ -21,11 +43,18 @@
       <div id="cuerpo" class= "col m8 offset-m3 center-align text-center">
           <!--Registro con Gmail de Google-->
           <div>
-            <a id="btn-google" class="col m8 offset-2 waves-effect btn-large btn-responsive" href="./kanban.html" role="button"><span class="boton" id = "colorG">Iniciar con Google</span></a>
+            <a id="btn-google" class="col m8 offset-2 waves-effect btn-large btn-responsive" role="button"><span class="boton" id = "colorG">
+              <i class="fa fa-google-plus-square" style="font-size:36px;color:withe;background-color: #C0392B;"></i> Iniciar con Google</span></a>
           </div>
           <!--Registro con Facebook-->
           <div>
-            <a id="btn-facebook" class="col m8 offset-2 waves-effect waves-light btn-large btn-responsive" href="./kanban.html" role="button"><span class="boton">Iniciar con Facebook</span></a>
+            <a id="btn-facebook" class="col m8 offset-2 waves-effect waves-light btn-large btn-responsive" role="button"><span class="boton" id="colorF">
+              <i class="fa fa-facebook-square" style="font-size:36px;color:withe;background-color: #3498DB;"></i> Iniciar con Facebook</span></a>
+          </div>
+          <!--Registro con Github-->
+          <div>
+            <a id="btn-github" class="col m8 offset-2 waves-effect waves-light btn-large btn-responsive" role="button"><span class="boton">
+              <i class="fa fa-github-square" style="font-size:36px;color:withe;background-color:#283747;"></i> Iniciar con Github</span></a>
           </div>
       </div>
     </div>

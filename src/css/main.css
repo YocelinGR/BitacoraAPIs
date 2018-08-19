@@ -17,11 +17,20 @@ img {
   height: 70px;
 }
 .boton{
-  font-size: 2em;
+  font-size: 1.5em;
 }
 #btn-google, #colorG {
   background-color: #C0392B;
+  font-family: 'Quicksand', sans-serif;
+  color: #F8F9F9;
 }
-#btn-facebook, span {
+#btn-facebook, #colorF {
   background-color: #3498DB;
+  font-family: 'Quicksand', sans-serif;
+  color: #F8F9F9;
+}
+#btn-github, span {
+  background-color: #283747;
+  font-family: 'Quicksand', sans-serif;
+  color: #F8F9F9;
 }
