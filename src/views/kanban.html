@@ -1,10 +1,136 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>kanban</title>
-  </head>
-  <body>
+<head>
+  <title>Reminder.me | Kanban</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Pacifico|Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <!--Íconos de Material-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+</head>
+<body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '293953357855459',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v3.0'
+        });
 
+        FB.AppEvents.logPageView();
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <header>
+        <!--Barra superior-->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">
+                    <h4>Mis Pendientes</h4>
+                </a>
+                <a href="#" data-target="my-side-bar" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a>Hola Usuario!!!</a>
+                    </li>
+                    <li>
+                        <a id= "logOut">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Menu lateral-->
+        <ul id="my-side-bar" class="sidenav sidenav-fixed">
+            <li class="bar-element">
+                <div>
+                    <a href="#">
+                      <img class="header-logo" src="../asserts/cat.gif" alt="Logotipo Cabecera">
+                    </a>
+                </div>
+            </li>
+            <li class="bar-element" id="goList">
+                <a href="#!">
+                    <i class="fa fa-list-ul" style="font-size:24px;color:white"></i>To Do List
+                </a>
+            </li>
+            <li class="bar-element">
+                <a href="#!" id="goDocs">
+                    <i class="fa fa-book" style="font-size:24px;color:white"></i>Documentos
+                </a>
+            </li>
+            <li class="bar-element">
+                <a href="#!" id="goKanban">
+                    <i class="fa fa-columns" style="font-size:24px;color:white"></i>Kanban
+                </a>
+            </li>
+            <li class="bar-element">
+                <a href="#!" id="goCalendar">
+                    <i class="fa fa-calendar" style="font-size:24px;color:white"></i>Calendario
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="row">
+          <div id="backlog" class= "col m10 offset-m1 center-align text-center">
+              <!--Registro con Gmail de Google-->
+              <div class="row">
+              <div class="input-field col m2">
+                <input type="text" class="validate">
+                <label for="newTask" style="color:#F7F9F9;">Nueva tarea</label>
+              </div>
+              <div class="input-field col m1">
+                <a id="newTask" class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+              </div>
+              <div class="input-field col m7" id = "cardsBacklog">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="cols" class= "col m12 offset-m1 center-align text-center">
+          <div class="empty col m2 center-align text-center">
+            <div class="fill" draggable="true"> </div>
+          </div>
+
+          <div class="empty col m2 center-align text-center">
+          </div>
+
+          <div class="empty col m2 center-align text-center">
+          </div>
+
+          <div class="empty col m2 center-align text-center">
+          </div>
+
+          <div class="empty col m2 center-align text-center">
+          </div>
+        </div>
+        </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+      <!-- Librerias -->
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+      <script src="../js/authentications.js"></script>
+      <script src="../js/kanban.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        $('input#input_text, textarea#textarea2').characterCounter();
+      });
+      </script>
   </body>
 </html>
